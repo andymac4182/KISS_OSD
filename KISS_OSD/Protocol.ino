@@ -238,6 +238,8 @@ inline void SerialSettings()
             if(settingSize > sizeof(settings.s)) settingSize = (uint8_t)sizeof(settings.s);
             settings.ReadSettings(true, settingSize);
             settings.WriteSettings();
+            setvTxSettings();
+			      vtx_set_frequency(vTxBand, vTxChannel);
           }
         }
       }
